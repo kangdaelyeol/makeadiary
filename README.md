@@ -2,9 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## while Working Holiday
 
-In the project directory, you can run:
+2022/03/18 ~ 2023/01/14? I don't know when I come back to korea.
+
 
 ### `yarn start`
 
