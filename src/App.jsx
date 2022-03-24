@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./components/home/Home";
+import Create from './components/create/Create';
 
-function App() {
+console.log("render!");
+
+const App = () => {
 	const [db, setDB] = useState({
 		1: {
-			id: 1,
-			title: 'myDiary',
-			createAt: '2022-03-22',
-			content:
+			id: 1, // Number
+			title: 'myDiary', // String
+			createAt: '2022-03-22', // String 
+			content: // String
 				"hello!! my name is daniel. \n I am in Australia, It's hot today \n See u!",
 		},
 	});
 
 	return (
-		<div className='App'>
-			<h1>hello!</h1>
-		</div>
+		<BrowserRouter>
+		<Routes>
+			<Route element={<Home db={db} setDB={setDB} />} path="/" />
+			<Route element={<Create setDB={setDB} />} path="/create" />
+		</Routes>
+		</BrowserRouter>
 	);
 }
 
