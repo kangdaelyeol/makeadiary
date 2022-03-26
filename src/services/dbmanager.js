@@ -9,13 +9,14 @@ class Manager {
                     , by using setDB function it can add one of diary object to DB
       writing date - 2022, 03, 24
       writer - Daniel   */
-  addDiary = (setDB, title, context) => {
+  addDiary = (setDB, title, context, background) => {
     const id = createId();
     const diary = {
       id,
       title,
       createAt: createAt(),
-      context
+      context,
+      background: background || ""
     };  
     setDB(state => {
       const newDiary = {};
@@ -41,13 +42,14 @@ class Manager {
       wirtier - Daniel
    */
 
-  updateDiary = (setDB, title, context, id) => {
+  updateDiary = (setDB, title, context, id, background) => {
     setDB(state => {
       const newDiary = {};
       newDiary[id] = {
         ...state[id],
         title,
-        context
+        context,
+        background: background || "",
       }
       Object.keys(state).keys(key => {
         if(id === key) return;

@@ -1,13 +1,17 @@
-import React, {useRef} from "react";
+import React, { useRef, useState } from "react";
 import styles from "./create.module.css";
 
 
-const Create = ({setDB}) => {
+const Create = ({ onCreate }) => {
+  // bgInfo: Object(fileName: String, fileURL: String)? 
+  const [bgInfo, setBgInfo] = useState(false);
   const titleRef = useRef();
   const contextRef = useRef();
 
+
   const onSubmit = (e) => {
     e.preventDefault();
+
   }
   return (<div className={styles.main}>
     <form onSubmit={(event) => onSubmit(event)}>
